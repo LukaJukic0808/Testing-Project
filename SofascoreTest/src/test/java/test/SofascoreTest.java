@@ -23,6 +23,7 @@ public class SofascoreTest {
     SofascoreFootballMatchSubPage sofascoreFootballMatchSubPage;
     SofascoreFavouritesPage sofascoreFavouritesPage;
     SofascoreFootballTeamPage sofascoreFootballTeamPage;
+    SofascoreFootballPlayerPage sofascoreFootballPlayerPage;
     Capabilities capabilities;
     Wait<WebDriver> wait;
     String localHostURL = "http://localhost:4444/";
@@ -98,8 +99,25 @@ public class SofascoreTest {
         sofascoreFootballTeamPage.checkTopPlayers();
     }
 
+    @Test(priority = 5)
+    public void testFootballPlayerPage(){
+        String playerName = "Reece James";
+        String teamName = "Chelsea";
+        String playerNationAcronym = "ENG";
+        sofascoreHomePage = new SofascoreHomePage(driver);
+        sofascoreFootballPlayerPage = new SofascoreFootballPlayerPage(driver);
+        sofascoreHomePage.inputSearchBar(playerName);
+        sofascoreHomePage.clickFirstSearchResult();
+        sofascoreFootballPlayerPage.checkPlayerName(playerName);
+        sofascoreFootballPlayerPage.checkPlayerNation(playerNationAcronym);
+        sofascoreFootballPlayerPage.checkPlayerTeam(teamName);
+        sofascoreFootballPlayerPage.checkStatisticsTab();
+        sofascoreFootballPlayerPage.checkAttributeOverviewTab();
+    }
+
     @AfterTest
     public void teardownTest() {
         driver.quit();
     }
+
 }
