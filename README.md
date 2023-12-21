@@ -3,9 +3,9 @@
 ## Instructions
 Recommended tools:
 <ol>
-  <li>Install <a href="https://www.oracle.com/java/technologies/downloads/">Java</a> (Version 11 or higher)</li>
-  <li>Download <a href="https://www.jetbrains.com/idea/">IntelliJ IDEA</a></li>
-  <li>Download <a href="https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.16.0/selenium-server-4.16.1.jar">Selenium Server/Grid</a></li>
+  <li>Install <a href="https://www.oracle.com/java/technologies/downloads/" target=”_blank”>Java</a> (Version 11 or higher)</li>
+  <li>Download <a href="https://www.jetbrains.com/idea/" target=”_blank”>IntelliJ IDEA</a></li>
+  <li>Download <a href="https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.16.0/selenium-server-4.16.1.jar" target=”_blank”>Selenium Server/Grid</a></li>
 </ol>
 To run and analyze tests, please follow the steps below:
 <ol>
@@ -48,12 +48,12 @@ This method tests football player page in the same fashion as testFootballTeamPa
 ## Advanced techniques used
 Below is a list of some concepts applied in this project. More about technique can be found by clicking on it:
 <ul>
-  <li><a href="https://www.selenium.dev/documentation/webdriver/">Selenium Web Driver</a></li>
-  <li><a href="https://www.browserstack.com/guide/page-object-model-in-selenium">Page Object Model(Page Factory)</a></li>
-  <li><a href="https://www.browserstack.com/guide/cross-browser-testing-in-selenium">Cross-Browser testing</a></li>
-  <li><a href="https://www.selenium.dev/documentation/grid/">Selenium Grid</a></li>
-  <li><a href="https://maven.apache.org/surefire/maven-surefire-report-plugin/usage.html">Test reporting</a></li>
-  <li><a href="https://www.selenium.dev/documentation/webdriver/waits/">Selenium Waiting Strategies(Implicit and Explicit wait)</a></li>
-  <li><a href="https://git-scm.com/docs/gitignore">.gitignore</a></li>
+  <li><a href="https://www.selenium.dev/documentation/webdriver/" target=”_blank”>Selenium Web Driver</a></li>
+  <li><a href="https://www.browserstack.com/guide/page-object-model-in-selenium" target=”_blank”>Page Object Model(Page Factory)</a></li>
+  <li><a href="https://www.browserstack.com/guide/cross-browser-testing-in-selenium" target=”_blank”>Cross-Browser testing</a></li>
+  <li><a href="https://www.selenium.dev/documentation/grid/" target=”_blank”>Selenium Grid</a></li>
+  <li><a href="https://maven.apache.org/surefire/maven-surefire-report-plugin/usage.html" target=”_blank”>Test reporting</a></li>
+  <li><a href="https://www.selenium.dev/documentation/webdriver/waits/" target=”_blank”>Selenium Waiting Strategies(Implicit and Explicit wait)</a></li>
+  <li><a href="https://git-scm.com/docs/gitignore" target=”_blank”>.gitignore</a></li>
 </ul>
 
