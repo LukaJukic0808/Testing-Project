@@ -24,6 +24,9 @@ public class SofascoreHomePage extends SofascorePage {
     @FindBy(xpath = "/html/body/div[1]/main/div/div[1]/div[2]/div/div[2]/div[2]/div[2]/a/div/div/div[4]/div/div[1]/div[2]/bdi")
     WebElement AwayTeamName;
 
+    @FindBy(xpath = "/html/body/div[1]/main/div/div[1]/div[2]/div/div[2]/div[2]/div[2]/a/div/div/div[6]/div/div/button")
+    WebElement AddToFavouritesButton;
+
     public SofascoreHomePage(WebDriver driver){
         super(driver);
         PageFactory.initElements(driver, this);
@@ -49,6 +52,10 @@ public class SofascoreHomePage extends SofascorePage {
         Assert.assertTrue(ProfilePicture.isDisplayed());
     }
 
+    public void addToFavourites(){
+        AddToFavouritesButton.click();
+    }
+
     public void clickFavourites(){
         Favourites.click();
     }
@@ -57,8 +64,8 @@ public class SofascoreHomePage extends SofascorePage {
         FirstMatch.click();
     }
 
-    public void clickSearchBar(){
-        SearchBar.click();
+    public void inputSearchBar(String text){
+        SearchBar.sendKeys(text);
     }
 
     public String getHomeTeamName(){

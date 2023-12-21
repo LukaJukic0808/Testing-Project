@@ -9,17 +9,15 @@ import org.testng.Assert;
 public class SofascoreFootballMatchSubPage extends SofascorePage {
 
     @FindBy(xpath = "/html/body/div[1]/main/div/div[1]/div[3]/div/div[1]/div/div[1]/div[2]/div/div[1]/div/a/div/div/bdi")
-    WebElement HomeTeamNameMatchSubPage;
+    WebElement HomeTeamName;
     @FindBy(xpath = "/html/body/div[1]/main/div/div[1]/div[3]/div/div[1]/div/div[1]/div[2]/div/div[3]/div/a/div/div/bdi")
-    WebElement AwayTeamNameMatchSubPage;
+    WebElement AwayTeamName;
     @FindBy(xpath = "/html/body/div[1]/main/div/div[1]/div[3]/div/div[1]/div/a/button")
     WebElement ShowMoreButton;
     @FindBy(xpath = "/html/body/div[1]/main/div/div[1]/div[3]/div/div[1]/div/div[3]/div/div/div/div[2]")
     WebElement LineupsButton;
-
     @FindBy(xpath = "/html/body/div[1]/main/div/div[1]/div[3]/div/div[1]/div/div[3]/div/div/div/div[1]")
     WebElement DetailsButton;
-
     @FindBy(xpath = "/html/body/div[1]/main/div/div[1]/div[3]/div/div[1]/div/div[3]")
     WebElement AboutTeamsBar;
 
@@ -45,8 +43,8 @@ public class SofascoreFootballMatchSubPage extends SofascorePage {
     }
 
     public void checkTeams(String homeTeamName, String awayTeamName){
-        Assert.assertEquals(homeTeamName, HomeTeamNameMatchSubPage.getText());
-        Assert.assertEquals(awayTeamName, AwayTeamNameMatchSubPage.getText());
+        Assert.assertEquals(homeTeamName, HomeTeamName.getText());
+        Assert.assertEquals(awayTeamName, AwayTeamName.getText());
     }
 
 }
