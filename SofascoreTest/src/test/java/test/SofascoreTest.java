@@ -3,13 +3,12 @@ package test;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.*;
 
 import java.net.MalformedURLException;
@@ -30,8 +29,17 @@ public class SofascoreTest {
 
 
     @BeforeTest
-    public void setup() throws MalformedURLException {
-        capabilities = new ChromeOptions();
+    @Parameters("browser")
+    public void setup(String browser) throws MalformedURLException {
+        if(browser.equalsIgnoreCase("chrome")){
+            capabilities = new ChromeOptions();
+        }
+        else if(browser.equalsIgnoreCase("firefox")){
+            capabilities = new FirefoxOptions();
+        }
+        else if(browser.equalsIgnoreCase("edge")){
+            capabilities = new EdgeOptions();
+        }
         driver = new RemoteWebDriver(new URL(localHostURL), capabilities);
         wait = new WebDriverWait(driver, 5);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

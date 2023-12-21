@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="AllTestsSuite" parallel="tests" thread-count="1">
+<suite name="AllTestsSuite" parallel="tests" thread-count="3">
 
     <test name="Sofascore Test Google Chrome">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="test.SofascoreTest"/>
+        </classes>
+    </test>
+    <test name="Sofascore Test Microsoft Edge">
+        <parameter name="browser" value="edge"></parameter>
+        <classes>
+            <class name="test.SofascoreTest"/>
+        </classes>
+    </test>
+    <test name="Sofascore Test Mozilla Firefox">
+        <parameter name="browser" value="firefox"></parameter>
         <classes>
             <class name="test.SofascoreTest"/>
         </classes>
