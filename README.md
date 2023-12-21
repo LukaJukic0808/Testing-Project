@@ -25,7 +25,7 @@ To run and analyze tests, please follow the steps below:
 
  <li>Wait for tests to finish.</li>
  <li>In your IDE, inside project folder, navigate to target/surefire-reports/index.html, right click it and open in your preffered browser. From there, you can analyze tests results.</li>
- <li>After You are done, it is recommended to go to opened command line and terminate Selenium Server by clicking CTRL+C(multiple times if once doesn't work)</li>
+ <li>Once you are done, it is recommended to go to opened command line and terminate Selenium Server by clicking CTRL+C(multiple times if once doesn't work)</li>
 </ol>
 
 ## Tests descriptions
