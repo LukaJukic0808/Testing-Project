@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
-public class SofascoreHomePage extends SofascorePage{
+public class SofascoreHomePage extends SofascorePage {
 
     @FindBy(xpath = "/html/body/div[1]/main/div/div[1]/div[2]/div/div[2]/div[2]/div[2]/a/div/div/div[1]")
     WebElement FirstMatch;
@@ -17,6 +17,12 @@ public class SofascoreHomePage extends SofascorePage{
 
     @FindBy(xpath = "/html/body/div[1]/main/div/div[1]/div[1]/div[3]")
     WebElement TopLeagues;
+
+    @FindBy(xpath = "/html/body/div[1]/main/div/div[1]/div[2]/div/div[2]/div[2]/div[2]/a/div/div/div[4]/div/div[1]/div[1]/bdi")
+    WebElement HomeTeamName;
+
+    @FindBy(xpath = "/html/body/div[1]/main/div/div[1]/div[2]/div/div[2]/div[2]/div[2]/a/div/div/div[4]/div/div[1]/div[2]/bdi")
+    WebElement AwayTeamName;
 
     public SofascoreHomePage(WebDriver driver){
         super(driver);
@@ -53,6 +59,14 @@ public class SofascoreHomePage extends SofascorePage{
 
     public void clickSearchBar(){
         SearchBar.click();
+    }
+
+    public String getHomeTeamName(){
+        return HomeTeamName.getText();
+    }
+
+    public String getAwayTeamName(){
+        return AwayTeamName.getText();
     }
 
 }

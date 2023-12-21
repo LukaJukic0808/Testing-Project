@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.SofascoreHomePage;
+import pages.SofascoreFootballMatchSubPage;
 import pages.SofascorePage;
 
 import java.net.MalformedURLException;
@@ -19,6 +20,7 @@ public class SofascoreTest {
 
     WebDriver driver;
     SofascoreHomePage sofascoreHomePage;
+    SofascoreFootballMatchSubPage sofascoreFootballMatchSubPage;
     Capabilities capabilities;
     String localHostURL = "http://localhost:4444/";
 
@@ -44,6 +46,18 @@ public class SofascoreTest {
         sofascoreHomePage.checkProfilePicture();
         sofascoreHomePage.checkTopLeagues();
         sofascoreHomePage.checkSettingsButton();
+    }
+
+    @Test
+    public void testFootballMatchSubPage(){
+        sofascoreHomePage = new SofascoreHomePage(driver);
+        sofascoreHomePage.clickFirstMatch();
+        sofascoreFootballMatchSubPage = new SofascoreFootballMatchSubPage(driver);
+        sofascoreFootballMatchSubPage.checkShowMoreButton();
+        sofascoreFootballMatchSubPage.checkAboutTeamsBar();
+        sofascoreFootballMatchSubPage.checkDetailsButton();
+        sofascoreFootballMatchSubPage.checkLineupsButton();
+        sofascoreFootballMatchSubPage.checkTeams(sofascoreHomePage.getHomeTeamName(), sofascoreHomePage.getAwayTeamName());
     }
 
     @AfterTest
