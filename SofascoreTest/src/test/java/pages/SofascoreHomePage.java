@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,13 +26,19 @@ public class SofascoreHomePage extends SofascorePage {
     @FindBy(xpath = "/html/body/div[1]/main/div/div[1]/div[2]/div/div[2]/div[2]/div[2]/a/div/div/div[6]/div/div/button")
     WebElement AddToFavouritesButton;
 
+    @FindBy(xpath = "/html/body/div[3]/div[2]/div[1]/div[2]/div[2]/button[1]")
+    WebElement ConsentCookiesButton;
+
+    @FindBy(xpath = "/html/body/div[1]/header/div[1]/div/div/div[2]/div/div/div/div[1]/div/div[1]/a")
+    WebElement FirstSearchResult;
+
     public SofascoreHomePage(WebDriver driver){
         super(driver);
         PageFactory.initElements(driver, this);
     }
 
     public void acceptCookies(){
-        driver.findElement(By.xpath("/html/body/div[3]/div[2]/div[1]/div[2]/div[2]/button[1]")).click();
+        ConsentCookiesButton.click();
     }
 
     public void checkCalendar(){
@@ -69,8 +74,7 @@ public class SofascoreHomePage extends SofascorePage {
     }
 
     public void clickFirstSearchResult(){
-        WebElement firstResult = driver.findElement(By.xpath("/html/body/div[1]/header/div[1]/div/div/div[2]/div/div/div/div[1]/div/div[1]/a"));
-        firstResult.click();
+        FirstSearchResult.click();
     }
 
     public String getHomeTeamName(){

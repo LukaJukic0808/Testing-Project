@@ -55,8 +55,8 @@ public class SofascoreTest {
     @Test(priority = 2)
     public void testFootballMatchSubPage(){
         sofascoreHomePage = new SofascoreHomePage(driver);
-        sofascoreHomePage.clickFirstMatch();
         sofascoreFootballMatchSubPage = new SofascoreFootballMatchSubPage(driver);
+        sofascoreHomePage.clickFirstMatch();
         sofascoreFootballMatchSubPage.checkShowMoreButton();
         sofascoreFootballMatchSubPage.checkAboutTeamsBar();
         sofascoreFootballMatchSubPage.checkDetailsButton();
@@ -69,13 +69,13 @@ public class SofascoreTest {
         String homeTeamName = null;
         String awayTeamName = null;
         sofascoreHomePage = new SofascoreHomePage(driver);
+        sofascoreFavouritesPage = new SofascoreFavouritesPage(driver);
         homeTeamName = sofascoreHomePage.getHomeTeamName();
         awayTeamName = sofascoreHomePage.getAwayTeamName();
         sofascoreHomePage.addToFavourites();
         sofascoreHomePage.clickFavourites();
         wait.until(d -> driver.getCurrentUrl().equalsIgnoreCase(SofascoreFavouritesPage.favouritesURL));
         driver.navigate().refresh(); //Sofascore shows favourites only after refresh
-        sofascoreFavouritesPage = new SofascoreFavouritesPage(driver);
         sofascoreFavouritesPage.checkDeleteFinishedButton();
         sofascoreFavouritesPage.checkLeftSideBar();
         sofascoreFavouritesPage.checkNotificationSettingsButton();
@@ -88,9 +88,9 @@ public class SofascoreTest {
         String teamLeague = "Premier League";
         String teamNation = "England";
         sofascoreHomePage = new SofascoreHomePage(driver);
+        sofascoreFootballTeamPage = new SofascoreFootballTeamPage(driver);
         sofascoreHomePage.inputSearchBar(teamName);
         sofascoreHomePage.clickFirstSearchResult();
-        sofascoreFootballTeamPage = new SofascoreFootballTeamPage(driver);
         sofascoreFootballTeamPage.checkTeamLeague(teamLeague);
         sofascoreFootballTeamPage.checkTeamName(teamName);
         sofascoreFootballTeamPage.checkTeamNation(teamNation);
