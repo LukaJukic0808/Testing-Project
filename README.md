@@ -9,6 +9,7 @@ Recommended tools:
 </ol>
 To run and analyze tests, please follow the steps below:
 <ol>
+  <li>Clone this repository</li>
   <li>In the command line, navigate to the folder where your Selenium Server file is.</li>
   <li>Copy the following line and click ENTER:</li>
   
