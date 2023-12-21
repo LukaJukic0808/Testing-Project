@@ -10,10 +10,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pages.SofascoreFavouritesPage;
-import pages.SofascoreHomePage;
-import pages.SofascoreFootballMatchSubPage;
-import pages.SofascorePage;
+import pages.*;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -25,6 +22,7 @@ public class SofascoreTest {
     SofascoreHomePage sofascoreHomePage;
     SofascoreFootballMatchSubPage sofascoreFootballMatchSubPage;
     SofascoreFavouritesPage sofascoreFavouritesPage;
+    SofascoreFootballTeamPage sofascoreFootballTeamPage;
     Capabilities capabilities;
     Wait<WebDriver> wait;
     String localHostURL = "http://localhost:4444/";
@@ -35,7 +33,7 @@ public class SofascoreTest {
         capabilities = new ChromeOptions();
         driver = new RemoteWebDriver(new URL(localHostURL), capabilities);
         wait = new WebDriverWait(driver, 5);
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
 
@@ -82,6 +80,22 @@ public class SofascoreTest {
         sofascoreFavouritesPage.checkLeftSideBar();
         sofascoreFavouritesPage.checkNotificationSettingsButton();
         sofascoreFavouritesPage.checkTeams(homeTeamName, awayTeamName);
+    }
+
+    @Test(priority = 4)
+    public void testFootballTeamPage(){
+        String teamName = "Chelsea";
+        String teamLeague = "Premier League";
+        String teamNation = "England";
+        sofascoreHomePage = new SofascoreHomePage(driver);
+        sofascoreHomePage.inputSearchBar(teamName);
+        sofascoreHomePage.clickFirstSearchResult();
+        sofascoreFootballTeamPage = new SofascoreFootballTeamPage(driver);
+        sofascoreFootballTeamPage.checkTeamLeague(teamLeague);
+        sofascoreFootballTeamPage.checkTeamName(teamName);
+        sofascoreFootballTeamPage.checkTeamNation(teamNation);
+        sofascoreFootballTeamPage.checkStatisticsTab();
+        sofascoreFootballTeamPage.checkTopPlayers();
     }
 
     @AfterTest

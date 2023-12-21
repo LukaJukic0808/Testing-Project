@@ -68,6 +68,11 @@ public class SofascoreHomePage extends SofascorePage {
         SearchBar.sendKeys(text);
     }
 
+    public void clickFirstSearchResult(){
+        WebElement firstResult = driver.findElement(By.xpath("/html/body/div[1]/header/div[1]/div/div/div[2]/div/div/div/div[1]/div/div[1]/a"));
+        firstResult.click();
+    }
+
     public String getHomeTeamName(){
         return HomeTeamName.getText();
     }
