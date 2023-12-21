@@ -11,7 +11,7 @@ To run and analyze tests, please follow the steps below:
 <ol>
   <li>Clone this repository</li>
   <li>In the command line, navigate to the folder where your Selenium Server file is.</li>
-  <li>Copy the following line and click ENTER:</li>
+  <li>Copy the following line and click ENTER (don't close command line):</li>
   
   ```
   java -jar selenium-server-4.16.1.jar standalone --selenium-manager true
@@ -25,6 +25,7 @@ To run and analyze tests, please follow the steps below:
 
  <li>Wait for tests to finish.</li>
  <li>In your IDE, inside project folder, navigate to target/surefire-reports/index.html, right click it and open in your preffered browser. From there, you can analyze tests results.</li>
+ <li>After You are done, it is recommended to go to opened command line and terminate Selenium Server by clicking CTRL+C(multiple times if once doesn't work)</li>
 </ol>
 
 ## Tests descriptions
